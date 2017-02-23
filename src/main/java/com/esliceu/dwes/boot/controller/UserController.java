@@ -1,6 +1,8 @@
 package com.esliceu.dwes.boot.controller;
 
 import com.esliceu.dwes.boot.model.User;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,15 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    @Autowired
+    private BeanFactory beanFactory;
+
     @RequestMapping("/me")
     public User me(){
-        User user = new User();
-        user.setName("Xavi");
-        user.setSurname("Torrens");
-
-        return user;
+        return beanFactory.getBean(User.class);
     }
-
-
 
 }
