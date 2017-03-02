@@ -9,6 +9,11 @@ import java.util.List;
 @Entity(name = "users") //Annotation for mark this pojo as a mapping bbdd table class
 public class Usuario {
 
+    public Usuario(){}
+
+    public Usuario(String nombre, String apellidos) {}
+
+
     @Id
     @Column(name = "user_name")
     private String nombre;
@@ -19,6 +24,7 @@ public class Usuario {
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_name",referencedColumnName = "user_name")
     private List<Rol> roles;
+
 
     public String getNombre() {
         return nombre;

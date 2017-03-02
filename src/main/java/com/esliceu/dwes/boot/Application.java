@@ -1,7 +1,5 @@
 package com.esliceu.dwes.boot;
 
-import com.esliceu.dwes.boot.dao.UserRepository;
-import com.esliceu.dwes.boot.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
