@@ -1,9 +1,6 @@
 package com.esliceu.dwes.boot.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -12,9 +9,10 @@ import java.util.Date;
 @Entity
 public class User {
 
-    public User(){}
+    public User() {
+    }
 
-    public User(String name, String surname){
+    public User(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
@@ -28,6 +26,7 @@ public class User {
     private String password;
     private Date birthDate;
     private Boolean mailing;
+    private String address;
 
 
     public String getName() {
@@ -86,7 +85,15 @@ public class User {
         this.id = id;
     }
 
-    public String toString(){
-        return this.id  + ":" + this.surname + ", " + this.name;
+    public String toString() {
+        return this.id + ":" + this.surname + ", " + this.name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
