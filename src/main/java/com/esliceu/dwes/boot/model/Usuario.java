@@ -1,13 +1,14 @@
 package com.esliceu.dwes.boot.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by xavi on 2/03/17.
  */
 @Entity(name = "users") //Annotation for mark this pojo as a mapping bbdd table class
-public class Usuario {
+public class Usuario implements Serializable {
 
     public Usuario(){}
 
@@ -40,5 +41,13 @@ public class Usuario {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+
+    public List<Rol> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Rol> roles) {
+        this.roles = roles;
     }
 }
